@@ -1,1 +1,44 @@
-<iframe height='1500px' width='100%' frameborder='0' allowTransparency='true' scrolling='auto' src='https://creatorapp.zohopublic.com/predicata/invoice-scraper/report-embed/Manual_Review_Page_Report/21k5k4UuTPw3TGs2xUfAM0jZkkj7A63HRKQqMfHHBwQJfbw1HE9H4kEtTgxH0ngkFQpeS2bTerHhk3F5tn9pFPj7taTNffQv2Mt8'></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Embedded Report</title>
+  <style>
+    /* full‑page reset so iframe really is 100% width/height */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #reportContainer {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- empty container; no src exposed in HTML -->
+  <div id="reportContainer"></div>
+
+  <script>
+    // 1) Base64 of your Zoho embed URL
+    //    e.g. in console:  btoa("https://creatorapp.zohopublic.com/…")
+    const b64 = "aHR0cHM6Ly9jcmVhdG9yYXBwLnpvaG9wdWJsaWMuY29tL3ByZWRpY2F0YS9pbnZvaWNlLXNjcmFwZXIvcmVwb3J0LWVtYmVkL01hbnVhbF9SZXZpZXdfUGFnZV9SZXBvcnQvMjFrNWs0VXVUUHczVEdzMnhVZkFNMGpaa2tqN0E2M0hSS1FxTWZISEJ3UUpmYncxSEU5SDRrRXRUZ3hIMG5na0ZRcGVTMmJUZXJIaGszRjV0bjlwRlBqN3RhVE5mZlF2Mk10OA==";
+  
+
+    // 2) Decode and create the iframe
+    const url = atob(b64);
+    const iframe = document.createElement("iframe");
+    iframe.style.width             = "100%";
+    iframe.style.height            = "1500px";  // adjust as needed
+    iframe.frameBorder             = "0";
+    iframe.allowTransparency       = "true";
+    iframe.scrolling               = "auto";
+    iframe.src                     = url;
+
+    // 3) Append into the page
+    document.getElementById("reportContainer").appendChild(iframe);
+  </script>
+</body>
+</html>
